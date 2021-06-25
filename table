@@ -1,0 +1,27 @@
+2:>==    CREATE TABLE crud_development (a INTEGER)
+
+3:==>   
+
+CREATE TABLE crud_development(
+ course_id SERIAL PRIMARY KEY,
+ course_name VARCHAR (50) UNIQUE NOT NULL,
+ course_instructor VARCHAR (100) NOT NULL,
+ topic VARCHAR (20) NOT NULL
+);
+
+INSERT INTO crud_development(course_name, course_instructor, topic)
+VALUES('Deep Learning in Python','Dan Becker','Python');
+
+INSERT INTO crud_development(course_name, course_instructor, topic)
+VALUES('Joining Data in PostgreSQL','Chester Ismay','SQL');
+
+SELECT * FROM crud_development;
+
+
+UPDATE crud_development SET course_name = 'Joining Data in SQL'
+WHERE course_instructor = 'Chester Ismay';
+
+DELETE from crud_development
+WHERE course_name = 'Deep Learning in Python';
+
+
